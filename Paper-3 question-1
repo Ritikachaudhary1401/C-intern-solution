@@ -1,0 +1,90 @@
+#include<stdio.h>
+int main()
+{
+    int m,n,i,j,k,a1[100],a2[100];
+    int flag;
+    
+printf("Enter size of Array 1: ");
+scanf("%d",&m);
+printf("Enter array 1: ");
+for(i=0;i<m;i++)
+{
+    scanf("%d",&a1[i]);
+}
+printf("Enter size of Array 2: ");
+scanf("%d",&n);
+printf("Enter array 2: ");
+for(i=0;i<n;i++)
+{
+    scanf("%d",&a2[i]);
+}
+//sort(a1,a1+m);
+//sort(a2,a2+n);
+//UNION 
+k=0;
+printf("Union: ");
+for(i=0;i<m;i++)
+{
+    while(k<n)
+    {
+        if(a2[k]<a1[i])
+       { printf("%d ",a2[k]);
+        k++;}
+        else if(a2[k]==a1[i])
+        {
+            printf("%d ",a2[k]);
+            k++;
+            break;
+        }
+        else
+        {
+            printf("%d ",a1[i]);
+            break;
+        }
+    }
+    if(k==n)
+    {
+        printf("%d ",a1[i]);
+    }
+}
+if(n>m)
+{
+    for(i=k;i<n;i++)
+    {
+        printf("%d ",a2[i]);
+    }
+
+}
+
+//INTERSECTION
+printf("\nIntersection: ");
+if(m>n)
+{
+    for(i=0;i<m;i++)
+    { flag=0;
+        for(j=0;j<n;j++)
+        {
+            if(a1[i]==a2[j])
+            flag=1;
+        }
+        if(flag==1)
+        printf("%d ",a1[i]);
+    }
+}
+else
+{
+    for(i=0;i<n;i++)
+    { flag=0;
+        for(j=0;j<m;j++)
+        {
+            if(a2[i]==a1[j])
+            flag=1;
+        }
+        if(flag==1)
+        printf("%d ",a2[i]);
+    }
+}
+
+return 0;
+
+}
