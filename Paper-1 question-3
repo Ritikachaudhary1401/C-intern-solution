@@ -1,0 +1,39 @@
+#include<stdio.h>
+void main()
+{
+    int i, j, c, x, y, a[100], n,b;
+    printf("Enter the size of array: ");
+    scanf("%d",&n);
+    printf("Enter the array: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("Enter value of x: ");
+    scanf("%d",&x);
+    printf("Enter value of y: ");
+    scanf("%d",&y);
+    c=n;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==x||a[i]==y)
+        {
+            for(j=i+1;j<n;j++)
+            {
+               if(a[j]==x||a[j]==y&&a[j]!=a[i])
+               {
+            
+               {
+                   b=(j-i);
+               
+                   if(c>b)
+                   {c=b;
+                  
+                   
+                   }
+               }}
+            }
+        }
+    }
+    printf("Minumum distance is : %d",c);
+}
