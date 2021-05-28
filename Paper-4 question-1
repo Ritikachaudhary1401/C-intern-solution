@@ -1,0 +1,37 @@
+#include<stdio.h>
+void main()
+{
+    int i,n,a[10];
+    int sum,j,c,d;
+    printf("Enter the size of array: ");
+    scanf("%d",&n);
+    printf("Enter the array: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+   sum=a[0]+a[1];
+   c=a[0];
+   d=a[1];
+   if(sum<0)
+   sum=sum*(-1);
+   for(i=0;i<n;i++)
+   {
+       for(j=i+1;j<n;j++)
+       { 
+           
+           if(((a[i]+a[j])-0)<sum||(0-(a[i]+a[j]))<sum)
+           {
+              
+               sum=a[i]+a[j];
+            
+               c=a[i];
+               d=a[j];
+                if(sum<0)
+  { sum=sum*(-1);}
+               
+           }
+       }
+   }
+   printf("Elements with sum closest to zero are: %d and %d ",c,d);
+}
